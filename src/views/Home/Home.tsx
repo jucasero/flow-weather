@@ -1,8 +1,12 @@
-import { IGetWeatherParams } from './models';
+import { useEffect, useState } from 'react';
+
+import { ICurrent, IGetWeatherParams } from './models';
 import { Header, Footer } from '../../components/layout';
 import { IHomeReducer } from '../../state/models';
 import linkedinIcon from '../../assets/icons/linkedin-icon.svg';
 import githubIcon from '../../assets/icons/github-icon.svg';
+import { Spinner } from '../../components/common/Spinner';
+import { Card } from '../../components/common/Card';
 
 interface IHomeProps {
   getWeather(params: IGetWeatherParams): void;
@@ -11,13 +15,50 @@ interface IHomeProps {
 
 export const HomeComponent: React.FC<IHomeProps> = (props: IHomeProps) => {
   const { getWeather, store } = props;
-  console.log(getWeather, store);
+  const [loader, setLoader] = useState(true);
+  const current: ICurrent = store.weather.data.current;
+
+  useEffect(() => {
+    getWeather({
+      lat: 4.601874,
+      lon: -74.071648,
+      exclude: 'minutely,hourly,alerts',
+      units: 'metric',
+      lang: 'es',
+      appid: '4876cc236ffcabea6a6aad9960a7ea32'
+    });
+  }, []);
+
+  useEffect(() => {
+    if (!store.weather.loading && Object.keys(store.weather.data).length) {
+      setLoader(false);
+    }
+  }, [store.weather.loading]);
 
   return (
     <>
       <Header title='Flow Weather' />
       <main>
-        <h1>Este es el cuerpo del Home</h1>
+        {loader ? (
+          <Spinner />
+        ) : (
+          <Card
+            date={'Hoy'}
+            dayWeatherDescripton={current.weather[0].description}
+            icon={current.weather[0].icon}
+            tempeture={current.temp}
+            feelsLike={current.feels_like}
+            humidity={current.humidity}
+            clouds={current.clouds}
+            pressure={current.pressure}
+            windSpeed={current.wind_speed}
+            uvi={current.uvi}
+            dewPoint={current.dew_point}
+            visibility={current.visibility}
+            sunrise={current.sunrise}
+            sunset={current.sunset}
+          />
+        )}
       </main>
       <Footer
         githubIcon={githubIcon}
