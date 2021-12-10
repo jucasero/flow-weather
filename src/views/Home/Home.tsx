@@ -5,8 +5,7 @@ import { Header, Footer } from '../../components/layout';
 import { IHomeReducer } from '../../state/models';
 import linkedinIcon from '../../assets/icons/linkedin-icon.svg';
 import githubIcon from '../../assets/icons/github-icon.svg';
-import { Spinner } from '../../components/common/Spinner';
-import { Card } from '../../components/common/Card';
+import { Card, Spinner } from '../../components/common';
 
 interface IHomeProps {
   getWeather(params: IGetWeatherParams): void;
