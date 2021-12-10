@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/flow-weather/static/css/main.b1e9cd12.chunk.css",
+    "main.js": "/flow-weather/static/js/main.ae626a32.chunk.js",
+    "main.js.map": "/flow-weather/static/js/main.ae626a32.chunk.js.map",
+    "runtime-main.js": "/flow-weather/static/js/runtime-main.0c5d7e0c.js",
+    "runtime-main.js.map": "/flow-weather/static/js/runtime-main.0c5d7e0c.js.map",
+    "static/js/2.5282d673.chunk.js": "/flow-weather/static/js/2.5282d673.chunk.js",
+    "static/js/2.5282d673.chunk.js.map": "/flow-weather/static/js/2.5282d673.chunk.js.map",
+    "index.html": "/flow-weather/index.html",
+    "static/css/main.b1e9cd12.chunk.css.map": "/flow-weather/static/css/main.b1e9cd12.chunk.css.map",
+    "static/js/2.5282d673.chunk.js.LICENSE.txt": "/flow-weather/static/js/2.5282d673.chunk.js.LICENSE.txt",
+    "static/media/github-icon.b7137fc9.svg": "/flow-weather/static/media/github-icon.b7137fc9.svg",
+    "static/media/linkedin-icon.ca6a0d94.svg": "/flow-weather/static/media/linkedin-icon.ca6a0d94.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0c5d7e0c.js",
+    "static/js/2.5282d673.chunk.js",
+    "static/css/main.b1e9cd12.chunk.css",
+    "static/js/main.ae626a32.chunk.js"
+  ]
+}
