@@ -1,0 +1,23 @@
+.footer {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background-color: black;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+.footer__item {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+}
+
+.footer__image {
+  width: 2rem;
+}
+
+.footer__image__text {
+  margin: 0 1rem;
+}
