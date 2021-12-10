@@ -89,7 +89,7 @@ export const Card: React.FC<ICardProps> = (props: ICardProps) => {
 
   return (
     <div className='card'>
-      <div className='card__row'>
+      <div className='card__row__title'>
         <h2>{setCardTitle()}</h2>
       </div>
       <div className='card__row'>
