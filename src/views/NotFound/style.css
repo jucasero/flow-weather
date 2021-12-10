@@ -1,0 +1,26 @@
+.not__found__main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.not__found__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.not__found__container__title {
+  margin: 0;
+}
+
+.not__found__button {
+  cursor: pointer;
+  background-color: #21dbaa;
+  padding: 4px;
+  border-radius: 4px;
+  font-size: 1rem;
+}

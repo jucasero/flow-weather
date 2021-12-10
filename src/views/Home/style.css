@@ -1,0 +1,29 @@
+.home__main {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.home__loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 78vh;
+}
+
+.home__today__weather {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home__next__days__weather__title {
+  text-align: center;
+  color: #21dbaa;
+}
+
+.home__next__days__weather {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
