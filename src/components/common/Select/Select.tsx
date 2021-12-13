@@ -1,7 +1,8 @@
+import { ICity } from '../../../views/Home/models';
 import './style.css';
 
 interface ISelectProps {
-  data: any[];
+  data: ICity[];
   handleChange(event: React.ChangeEvent<HTMLSelectElement>): void;
 }
 
