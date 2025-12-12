@@ -1,6 +1,6 @@
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router";
-import { Login } from "./views/Login/Login";
+import { Home, Login } from "./views";
 
 const router = createBrowserRouter([
 	{
@@ -8,6 +8,10 @@ const router = createBrowserRouter([
 		element: (
 			<Login message="Bienvenido a Flow Weather" buttonText="Ingresar" />
 		),
+	},
+	{
+		path: "/home",
+		element: <Home />,
 	},
 ]);
 

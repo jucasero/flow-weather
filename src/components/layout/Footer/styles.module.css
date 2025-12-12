@@ -1,0 +1,23 @@
+.footer {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	background-color: black;
+	margin-top: 1rem;
+	padding: 1rem;
+}
+
+.item {
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	color: white;
+}
+
+.image {
+	width: 2rem;
+}
+
+.image__text {
+	margin: 0 1rem;
+}

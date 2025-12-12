@@ -14,7 +14,7 @@ export const Login: React.FC<ILoginProps> = (props: ILoginProps) => {
 		<main className={styles.main}>
 			<div className={styles.container}>
 				<h1>{message}</h1>
-				<Link to="/flow-weather/home">
+				<Link to="/home">
 					<button type="button" className={styles.button}>
 						{buttonText}
 					</button>
