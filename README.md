@@ -1,4 +1,4 @@
-# bun-react-template
+# flow-weather
 
 To install dependencies:
 
