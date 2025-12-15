@@ -3,6 +3,7 @@ import githubIcon from "@/assets/icons/github-icon.svg";
 import linkedinIcon from "@/assets/icons/linkedin-icon.svg";
 import { Select } from "@/components/common";
 import { Footer, Header } from "@/components/layout";
+import { useGeo } from "@/hooks/useGeo";
 import type { City } from "@/models";
 import { useWeatherStore } from "@/state/weatherStore";
 import styles from "./styles.module.css";
@@ -21,15 +22,22 @@ export const Home: React.FC = () => {
 		(state) => state.setCityCoordinates,
 	);
 	const fetchWeather = useWeatherStore((state) => state.fetchWeather);
-	const weather = useWeatherStore((state) => state.weather);
-	const loading = useWeatherStore((state) => state.loading);
-	const error = useWeatherStore((state) => state.error);
+	const { geolocation } = useGeo();
 
 	useEffect(() => {
-		console.log(weather);
-		console.log(loading);
-		console.log(error);
-	}, [weather, loading, error]);
+		if (geolocation.error !== null) {
+			if (geolocation.latitude && geolocation.longitude) {
+				cities.unshift({
+					description: "Ubicación actual",
+					value: { lat: geolocation.latitude, lon: geolocation.longitude },
+				});
+				setCityCoordinates({
+					lat: geolocation.latitude,
+					lon: geolocation.longitude,
+				});
+			}
+		}
+	}, [geolocation, setCityCoordinates]);
 
 	useEffect(() => {
 		if (cities[0]) {
