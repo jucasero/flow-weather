@@ -5,7 +5,7 @@ import { Message, Select, Spinner } from "@/components/common";
 import { Footer, Header } from "@/components/layout";
 import { useGeo } from "@/hooks/useGeo";
 import type { City } from "@/models";
-import { useWeatherStore } from "@/state/weatherStore";
+import { useWeatherStore } from "@/store/weatherStore";
 import styles from "./styles.module.css";
 
 const cities: City[] = [
