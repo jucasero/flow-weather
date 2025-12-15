@@ -1,13 +1,13 @@
 import { useCallback, useEffect, useState } from "react";
 
-interface ICoordinates {
+interface Coordinates {
 	latitude: number | null;
 	longitude: number | null;
 	error: boolean | null;
 }
 
 const useGeo = () => {
-	const [coordinates, setCoordinates] = useState<ICoordinates>({
+	const [coordinates, setCoordinates] = useState<Coordinates>({
 		latitude: null,
 		longitude: null,
 		error: null,

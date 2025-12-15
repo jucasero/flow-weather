@@ -1,9 +1,9 @@
 import { useCallback } from "react";
-import type { ICity } from "@/models";
+import type { City } from "@/models";
 import styles from "./styles.module.css";
 
 interface ISelectProps {
-	data: ICity[];
+	data: City[];
 	handleChange(event: React.ChangeEvent<HTMLSelectElement>): void;
 }
 

@@ -1,9 +1,9 @@
-export interface ICity {
+export interface City {
 	description: string;
-	value: ICoordinates;
+	value: Coordinates;
 }
 
-export interface ICoordinates {
+export interface Coordinates {
 	lat: number;
 	lon: number;
 }

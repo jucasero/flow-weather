@@ -1,13 +1,12 @@
 import { Link } from "react-router";
-
 import styles from "./styles.module.css";
 
-interface ILoginProps {
+interface LoginProps {
 	message: string;
 	buttonText: string;
 }
 
-export const Login: React.FC<ILoginProps> = (props: ILoginProps) => {
+export const Login: React.FC<LoginProps> = (props: LoginProps) => {
 	const { message, buttonText } = props;
 
 	return (
