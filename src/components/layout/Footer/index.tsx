@@ -1,6 +1,6 @@
 import styles from "./styles.module.css";
 
-interface IFooterProps {
+interface FooterProps {
 	githubIcon: string;
 	linkedinIcon: string;
 	githubLink: string;
@@ -9,7 +9,7 @@ interface IFooterProps {
 	linkedinText: string;
 }
 
-export const Footer: React.FC<IFooterProps> = (props: IFooterProps) => {
+export const Footer: React.FC<FooterProps> = (props: FooterProps) => {
 	const {
 		githubIcon,
 		linkedinIcon,
@@ -28,7 +28,7 @@ export const Footer: React.FC<IFooterProps> = (props: IFooterProps) => {
 				rel="noreferrer"
 			>
 				<img className={styles.image} src={githubIcon} alt="github icon" />
-				<h3 className={styles.image__text}>{githubText}</h3>
+				<h3 className={styles.imageText}>{githubText}</h3>
 			</a>
 			<div className={styles.item}>
 				<a
@@ -42,7 +42,7 @@ export const Footer: React.FC<IFooterProps> = (props: IFooterProps) => {
 						src={linkedinIcon}
 						alt="linkedin icon"
 					/>
-					<h3 className={styles.image__text}>{linkedinText}</h3>
+					<h3 className={styles.imageText}>{linkedinText}</h3>
 				</a>
 			</div>
 		</footer>

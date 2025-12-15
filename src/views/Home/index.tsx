@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import githubIcon from "@/assets/icons/github-icon.svg";
 import linkedinIcon from "@/assets/icons/linkedin-icon.svg";
-import { Select } from "@/components/common";
+import { Select, Spinner } from "@/components/common";
 import { Footer, Header } from "@/components/layout";
 import { useGeo } from "@/hooks/useGeo";
 import type { City } from "@/models";
@@ -17,6 +17,7 @@ const cities: City[] = [
 ];
 
 export const Home: React.FC = () => {
+	const loading = useWeatherStore((state) => state.loading);
 	const cityCoordinates = useWeatherStore((state) => state.cityCoordinates);
 	const setCityCoordinates = useWeatherStore(
 		(state) => state.setCityCoordinates,
@@ -47,16 +48,24 @@ export const Home: React.FC = () => {
 	}, [fetchWeather, cityCoordinates]);
 
 	return (
-		<>
+		<main className={styles.main}>
 			<Header title="Flow Weather" />
-			<main className={styles.main}>
-				<Select
-					data={cities}
-					handleChange={(e) => {
-						setCityCoordinates(JSON.parse(e.target.value));
-					}}
-				/>
-			</main>
+			<section className={styles.content}>
+				{loading ? (
+					<div className={styles.loader}>
+						<Spinner />
+					</div>
+				) : (
+					<div>
+						<Select
+							data={cities}
+							handleChange={(e) => {
+								setCityCoordinates(JSON.parse(e.target.value));
+							}}
+						/>
+					</div>
+				)}
+			</section>
 			<Footer
 				githubIcon={githubIcon}
 				linkedinIcon={linkedinIcon}
@@ -65,6 +74,6 @@ export const Home: React.FC = () => {
 				githubText="@jucasero"
 				linkedinText="@jucasero"
 			/>
-		</>
+		</main>
 	);
 };
