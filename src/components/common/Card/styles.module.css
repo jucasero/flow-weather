@@ -1,0 +1,34 @@
+.card {
+	display: flex;
+	border: 1px solid #21dbaa;
+	border-radius: 20px;
+	background-color: #262626;
+	flex-direction: column;
+	flex-wrap: wrap;
+	box-sizing: border-box;
+	width: 350px;
+	height: 520px;
+	padding: 0 1rem;
+	margin: 0.5rem;
+}
+
+.row {
+	display: flex;
+	max-height: 75px;
+	justify-content: center;
+	align-items: center;
+}
+.rowTitle {
+	display: flex;
+	max-height: 75px;
+	justify-content: center;
+	text-align: center;
+}
+
+.col {
+	width: 100%;
+}
+
+.colItem {
+	margin: 0.5rem;
+}
