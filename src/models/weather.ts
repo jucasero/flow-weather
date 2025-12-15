@@ -17,11 +17,12 @@ export interface Current {
 	interval: number;
 	temperature_2m: number;
 	precipitation: number;
-	wind_speed_10m: number;
 	apparent_temperature: number;
-	is_day: number;
 	cloud_cover: number;
+	relative_humidity_2m: number;
+	rain: number;
 	surface_pressure: number;
+	wind_speed_10m: number;
 }
 
 export interface CurrentUnits {
@@ -29,11 +30,12 @@ export interface CurrentUnits {
 	interval: string;
 	temperature_2m: string;
 	precipitation: string;
-	wind_speed_10m: string;
 	apparent_temperature: string;
-	is_day: string;
 	cloud_cover: string;
+	relative_humidity_2m: string;
+	rain: string;
 	surface_pressure: string;
+	wind_speed_10m: string;
 }
 
 export interface Daily {
@@ -41,6 +43,14 @@ export interface Daily {
 	sunrise: string[];
 	sunset: string[];
 	uv_index_max: number[];
+	rain_sum: number[];
+	precipitation_probability_max: number[];
+	relative_humidity_2m_mean: number[];
+	cloud_cover_mean: number[];
+	wind_speed_10m_mean: number[];
+	surface_pressure_mean: number[];
+	dew_point_2m_mean: number[];
+	visibility_mean: number[];
 }
 
 export interface DailyUnits {
@@ -48,4 +58,12 @@ export interface DailyUnits {
 	sunrise: string;
 	sunset: string;
 	uv_index_max: string;
+	rain_sum: string;
+	precipitation_probability_max: string;
+	relative_humidity_2m_mean: string;
+	cloud_cover_mean: string;
+	wind_speed_10m_mean: string;
+	surface_pressure_mean: string;
+	dew_point_2m_mean: string;
+	visibility_mean: string;
 }
