@@ -25,7 +25,7 @@ export const useWeatherStore = create(
 			set({ loading: true });
 			getWeather(cityCoordinates)
 				.then((weather) => set({ weather }))
-				.catch((error) => set({ error }))
+				.catch((error) => set({ error: error?.message || String(error) }))
 				.finally(() => set({ loading: false }));
 		},
 	})),

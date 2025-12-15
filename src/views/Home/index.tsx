@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import githubIcon from "@/assets/icons/github-icon.svg";
 import linkedinIcon from "@/assets/icons/linkedin-icon.svg";
-import { Select, Spinner } from "@/components/common";
+import { Message, Select, Spinner } from "@/components/common";
 import { Footer, Header } from "@/components/layout";
 import { useGeo } from "@/hooks/useGeo";
 import type { City } from "@/models";
@@ -18,6 +18,7 @@ const cities: City[] = [
 
 export const Home: React.FC = () => {
 	const loading = useWeatherStore((state) => state.loading);
+	const error = useWeatherStore((state) => state.error);
 	const cityCoordinates = useWeatherStore((state) => state.cityCoordinates);
 	const setCityCoordinates = useWeatherStore(
 		(state) => state.setCityCoordinates,
@@ -55,6 +56,11 @@ export const Home: React.FC = () => {
 					<div className={styles.loader}>
 						<Spinner />
 					</div>
+				) : error ? (
+					<Message
+						title="¡Lo sentimos!"
+						description="En este momento el servicio no se encuentra disponible"
+					/>
 				) : (
 					<div>
 						<Select
