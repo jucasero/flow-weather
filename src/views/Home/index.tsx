@@ -4,8 +4,8 @@ import linkedinIcon from "@/assets/icons/linkedin-icon.svg";
 import { Select } from "@/components/common";
 import { Footer, Header } from "@/components/layout";
 import type { City } from "@/models";
-import styles from "./styles.module.css";
 import { useWeatherStore } from "@/state/weatherStore";
+import styles from "./styles.module.css";
 
 const cities: City[] = [
 	{ description: "Bogotá", value: { lat: 4.601874, lon: -74.071648 } },

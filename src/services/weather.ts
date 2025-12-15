@@ -1,5 +1,5 @@
-import type { Weather } from "@/models/weather";
 import type { Coordinates } from "@/models/home";
+import type { Weather } from "@/models/weather";
 
 export const getWeather = async (
 	cityCoordinates: Coordinates,
