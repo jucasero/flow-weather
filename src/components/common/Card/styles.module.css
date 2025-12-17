@@ -6,8 +6,6 @@
 	flex-direction: column;
 	flex-wrap: wrap;
 	box-sizing: border-box;
-	width: 350px;
-	height: 520px;
 	padding: 0 1rem;
 	margin: 0.5rem;
 }
