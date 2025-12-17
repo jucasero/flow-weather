@@ -2,35 +2,35 @@ import { RowCardDescription } from "./RowCardDescription";
 import styles from "./styles.module.css";
 
 interface CardProps {
-	date: string;
-	minTempeture: string;
-	maxTempeture: string;
-	apparentTemperature: string;
-	cloudCover: string;
-	dewPoint: string;
-	precipitationProbability: string;
-	surfacePressure: string;
-	visibility: string;
-	windSpeed: string;
-	uvi: string;
-	sunrise: string;
-	sunset: string;
+	date?: string;
+	minTempeture?: string;
+	maxTempeture?: string;
+	apparentTemperature?: string;
+	cloudCover?: string;
+	dewPoint?: string;
+	precipitationProbability?: string;
+	surfacePressure?: string;
+	visibility?: string;
+	windSpeed?: string;
+	uvi?: string;
+	sunrise?: string;
+	sunset?: string;
 }
 
 export const Card: React.FC<CardProps> = ({
-	date,
-	minTempeture,
-	maxTempeture,
-	apparentTemperature,
-	cloudCover,
-	dewPoint,
-	precipitationProbability,
-	surfacePressure,
-	visibility,
-	windSpeed,
-	uvi,
-	sunrise,
-	sunset,
+	date = "-",
+	minTempeture = "-",
+	maxTempeture = "-",
+	apparentTemperature = "-",
+	cloudCover = "-",
+	dewPoint = "-",
+	precipitationProbability = "-",
+	surfacePressure = "-",
+	visibility = "-",
+	windSpeed = "-",
+	uvi = "-",
+	sunrise = "-",
+	sunset = "-",
 }) => {
 	const setCardTitle = () => {
 		const days = [
@@ -52,9 +52,9 @@ export const Card: React.FC<CardProps> = ({
 				<h2>{setCardTitle()}</h2>
 			</div>
 			<RowCardDescription
-				firstSubtitle="Temperatura minima"
+				firstSubtitle="Temperatura mínima"
 				firstDescription={minTempeture}
-				secondSubtitle="Temperatura maxima"
+				secondSubtitle="Temperatura máxima"
 				secodDescription={maxTempeture}
 			/>
 			<RowCardDescription

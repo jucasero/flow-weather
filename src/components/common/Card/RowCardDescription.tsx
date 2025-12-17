@@ -2,16 +2,16 @@ import styles from "./styles.module.css";
 
 interface RowCardDescriptionProps {
 	firstSubtitle: string;
-	firstDescription: string | number;
+	firstDescription?: string | number;
 	secondSubtitle: string;
-	secodDescription: string | number;
+	secodDescription?: string | number;
 }
 
 export const RowCardDescription: React.FC<RowCardDescriptionProps> = ({
 	firstSubtitle,
-	firstDescription,
+	firstDescription = "-",
 	secondSubtitle,
-	secodDescription,
+	secodDescription = "-",
 }) => {
 	return (
 		<div className={styles.row}>
