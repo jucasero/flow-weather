@@ -17,12 +17,7 @@ export const Select: React.FC<ISelectProps> = (props: ISelectProps) => {
 	}, []);
 
 	return (
-		<select
-			id="city-select"
-			className={styles.select}
-			onChange={handleChange}
-			value={value}
-		>
+		<select className={styles.select} onChange={handleChange} value={value}>
 			{data.map((data) => (
 				<option
 					className={styles.option}
