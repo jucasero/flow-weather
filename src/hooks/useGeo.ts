@@ -31,7 +31,13 @@ export const useGeo = () => {
 	}, []);
 
 	useEffect(() => {
-		navigator.geolocation.getCurrentPosition(showPosition, showError);
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(showPosition, showError, {
+				timeout: 10000,
+			});
+		} else {
+			setGeolocation((prev) => ({ ...prev, error: true }));
+		}
 	}, [showError, showPosition]);
 
 	return { geolocation };
