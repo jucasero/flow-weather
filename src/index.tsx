@@ -1,6 +1,6 @@
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router";
-import { Home, Login } from "./views";
+import { Home, Login, NotFound } from "./views";
 
 const router = createBrowserRouter([
 	{
@@ -12,6 +12,10 @@ const router = createBrowserRouter([
 	{
 		path: "/home",
 		element: <Home />,
+	},
+	{
+		path: "*",
+		element: <NotFound />,
 	},
 ]);
 
