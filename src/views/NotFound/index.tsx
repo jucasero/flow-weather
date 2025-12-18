@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Button } from "@/components/common";
 import styles from "./styles.module.css";
 
 export const NotFound: React.FC = () => {
@@ -11,9 +11,7 @@ export const NotFound: React.FC = () => {
 					Parece que te has perdido en las nubes. La página que buscas no existe
 					o ha sido movida.
 				</p>
-				<Link to="/home" className={styles.button}>
-					Volver al inicio
-				</Link>
+				<Button to="/home">Volver al inicio</Button>
 			</div>
 		</main>
 	);

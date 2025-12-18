@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Button } from "@/components/common";
 import styles from "./styles.module.css";
 
 interface LoginProps {
@@ -13,11 +13,7 @@ export const Login: React.FC<LoginProps> = (props: LoginProps) => {
 		<main className={styles.main}>
 			<div className={styles.container}>
 				<h1>{message}</h1>
-				<Link to="/home">
-					<button type="button" className={styles.button}>
-						{buttonText}
-					</button>
-				</Link>
+				<Button to="/home">{buttonText}</Button>
 			</div>
 		</main>
 	);
