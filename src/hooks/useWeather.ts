@@ -4,7 +4,7 @@ import { useGeo } from "@/hooks/useGeo";
 import type { City } from "@/models";
 import { useWeatherStore } from "@/store/weatherStore";
 
-export const useWeatherFetch = () => {
+export const useWeather = () => {
 	const [citiesList, setCitiesList] = useState<City[]>(defaultCities);
 	const { geolocation } = useGeo();
 	const fetchWeather = useWeatherStore((state) => state.fetchWeather);

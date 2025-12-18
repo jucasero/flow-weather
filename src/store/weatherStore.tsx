@@ -19,6 +19,7 @@ const initialState: WeatherStore = {
 
 export const useWeatherStore = create(
 	combine(initialState, (set) => ({
+		setLoading: (loading: boolean) => set({ loading }),
 		setCityCoordinates: (cityCoordinates: Coordinates) =>
 			set({ cityCoordinates }),
 		fetchWeather: (cityCoordinates: Coordinates) => {
