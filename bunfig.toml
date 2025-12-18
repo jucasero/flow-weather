@@ -3,3 +3,6 @@ env = "BUN_PUBLIC_*"
 
 [test]
 preload = ["./src/setupTests.ts"]
+coverage = true
+coverageSkipTestFiles = true
+coverageThreshold = 0.9
