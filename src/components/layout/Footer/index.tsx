@@ -30,21 +30,16 @@ export const Footer: React.FC<FooterProps> = (props: FooterProps) => {
 				<img className={styles.image} src={githubIcon} alt="github icon" />
 				<h3 className={styles.imageText}>{githubText}</h3>
 			</a>
-			<div className={styles.item}>
-				<a
-					className={styles.item}
-					href={linkedinLink}
-					target="_blank"
-					rel="noreferrer"
-				>
-					<img
-						className={styles.image}
-						src={linkedinIcon}
-						alt="linkedin icon"
-					/>
-					<h3 className={styles.imageText}>{linkedinText}</h3>
-				</a>
-			</div>
+
+			<a
+				className={styles.item}
+				href={linkedinLink}
+				target="_blank"
+				rel="noreferrer"
+			>
+				<img className={styles.image} src={linkedinIcon} alt="linkedin icon" />
+				<h3 className={styles.imageText}>{linkedinText}</h3>
+			</a>
 		</footer>
 	);
 };

@@ -37,51 +37,55 @@ export const Home: React.FC = () => {
 						<Spinner />
 					</div>
 				) : error ? (
-					<Message
-						title="¡Lo sentimos!"
-						description="En este momento el servicio no se encuentra disponible"
-					/>
+					<div className={styles.loader}>
+						<Message
+							title="¡Lo sentimos!"
+							description="En este momento el servicio no se encuentra disponible"
+						/>
+					</div>
 				) : (
-					<section>
-						<div>
+					<>
+						<div className={styles.selectContainer}>
 							<Select
 								data={citiesList}
 								handleChange={handleCityChange}
 								value={JSON.stringify(cityCoordinates)}
 							/>
 						</div>
-						{weather &&
-							Array.from(
-								{ length: weather?.daily.time.length || 0 },
-								(_, index) => (
-									<Card
-										key={Math.random()}
-										date={weather.daily.time[index]?.toString()}
-										minTempeture={formatCardInfo("temperature_2m_min", index)}
-										maxTempeture={formatCardInfo("temperature_2m_max", index)}
-										apparentTemperature={formatCardInfo(
-											"apparent_temperature_mean",
-											index,
-										)}
-										cloudCover={formatCardInfo("cloud_cover_mean", index)}
-										dewPoint={formatCardInfo("dew_point_2m_mean", index)}
-										precipitationProbability={formatCardInfo(
-											"precipitation_probability_mean",
-											index,
-										)}
-										surfacePressure={formatCardInfo(
-											"surface_pressure_mean",
-											index,
-										)}
-										visibility={formatCardInfo("visibility_mean", index)}
-										windSpeed={formatCardInfo("wind_speed_10m_mean", index)}
-										uvi={formatCardInfo("uv_index_max", index)}
-										sunrise={weather.daily.sunrise[index]?.slice(-5)}
-										sunset={weather.daily.sunset[index]?.slice(-5)}
-									/>
-								),
-							)}
-					</section>
+						<div className={styles.grid}>
+							{weather &&
+								Array.from(
+									{ length: weather?.daily.time.length || 0 },
+									(_, index) => (
+										<Card
+											key={`${weather.daily.time[index]}-${index}`}
+											date={weather.daily.time[index]?.toString()}
+											minTempeture={formatCardInfo("temperature_2m_min", index)}
+											maxTempeture={formatCardInfo("temperature_2m_max", index)}
+											apparentTemperature={formatCardInfo(
+												"apparent_temperature_mean",
+												index,
+											)}
+											cloudCover={formatCardInfo("cloud_cover_mean", index)}
+											dewPoint={formatCardInfo("dew_point_2m_mean", index)}
+											precipitationProbability={formatCardInfo(
+												"precipitation_probability_mean",
+												index,
+											)}
+											surfacePressure={formatCardInfo(
+												"surface_pressure_mean",
+												index,
+											)}
+											visibility={formatCardInfo("visibility_mean", index)}
+											windSpeed={formatCardInfo("wind_speed_10m_mean", index)}
+											uvi={formatCardInfo("uv_index_max", index)}
+											sunrise={weather.daily.sunrise[index]?.slice(-5)}
+											sunset={weather.daily.sunset[index]?.slice(-5)}
+										/>
+									),
+								)}
+						</div>
+					</>
 				)}
 			</section>
 			<Footer
