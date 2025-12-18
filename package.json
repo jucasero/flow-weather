@@ -7,7 +7,9 @@
 		"dev": "bun --hot src/index.ts",
 		"build": "bun build ./src/index.html --outdir=dist --sourcemap --target=browser --minify --define:process.env.NODE_ENV='\"production\"' --env='BUN_PUBLIC_*'",
 		"start": "NODE_ENV=production bun src/index.ts",
-		"check": "biome check --write"
+		"check": "biome check --write",
+		"e2e": "playwright test",
+		"e2e:ui": "playwright test --ui"
 	},
 	"dependencies": {
 		"react": "^19",
