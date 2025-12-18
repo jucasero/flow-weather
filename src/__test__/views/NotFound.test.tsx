@@ -1,7 +1,13 @@
-import { describe, expect, it } from "bun:test";
-import { render, screen } from "@testing-library/react";
+import { beforeEach, describe, expect, it } from "bun:test";
+import { cleanup, render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router";
 import { NotFound } from "@/views/NotFound";
+
+beforeEach(() => {
+	// Clear the DOM before each test to avoid interference
+	document.body.innerHTML = "";
+	cleanup();
+});
 
 describe("NotFound View", () => {
 	it("should render 404 message and return button", () => {
