@@ -1,7 +1,13 @@
-import { describe, expect, it, vi } from "bun:test";
-import { fireEvent, render, screen } from "@testing-library/react";
+import { beforeEach, describe, expect, it, vi } from "bun:test";
+import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router";
 import { Button } from "@/components/common";
+
+beforeEach(() => {
+	// Clear the DOM before each test to avoid interference
+	document.body.innerHTML = "";
+	cleanup();
+});
 
 describe("Button Component", () => {
 	it("should render children correctly", () => {

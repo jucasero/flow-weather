@@ -1,11 +1,12 @@
 import { beforeEach, describe, expect, it, vi } from "bun:test";
-import { fireEvent, render, screen } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { Select } from "@/components/common";
 import type { City } from "@/models";
 
 beforeEach(() => {
 	// Clear the DOM before each test to avoid interference
 	document.body.innerHTML = "";
+	cleanup();
 });
 
 describe("Select Component", () => {
