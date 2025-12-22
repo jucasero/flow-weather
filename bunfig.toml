@@ -2,6 +2,7 @@
 env = "BUN_PUBLIC_*"
 
 [test]
+root = "./src/__test__/unit"
 preload = ["./src/setupTests.ts"]
 coverage = true
 coverageSkipTestFiles = true

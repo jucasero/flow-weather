@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it, vi } from "bun:test";
+import { afterEach, beforeEach, describe, expect, it, vi } from "bun:test";
 import type { Weather } from "@/models";
 import * as weatherService from "@/services/weather";
 import { useWeatherStore } from "@/store/weatherStore";
@@ -19,18 +19,22 @@ const waitForStoreState = (
 	});
 };
 
-describe("Weather Store", () => {
-	beforeEach(() => {
-		// Reset store state before each test
-		useWeatherStore.setState({
-			cityCoordinates: null,
-			weather: null,
-			loading: false,
-			error: null,
-		});
-		vi.restoreAllMocks();
+beforeEach(() => {
+	// Reset store state before each test
+	useWeatherStore.setState({
+		cityCoordinates: null,
+		weather: null,
+		loading: false,
+		error: null,
 	});
+	vi.clearAllMocks();
+});
 
+afterEach(() => {
+	vi.restoreAllMocks();
+});
+
+describe("Weather Store", () => {
 	it("should have initial state", () => {
 		const state = useWeatherStore.getState();
 		expect(state.cityCoordinates).toBeNull();

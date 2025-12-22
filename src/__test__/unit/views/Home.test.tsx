@@ -1,12 +1,20 @@
-import { describe, expect, it, vi } from "bun:test";
+import { afterEach, beforeEach, describe, expect, it, vi } from "bun:test";
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router";
 import * as useWeatherModule from "@/hooks/useWeather";
 import type { Weather } from "@/models";
 import { Home } from "@/views/Home";
 
-// Mock the hook
-const useWeatherMock = vi.spyOn(useWeatherModule, "useWeather");
+// Mock variable
+let useWeatherMock: ReturnType<typeof vi.fn>;
+
+beforeEach(() => {
+	useWeatherMock = vi.spyOn(useWeatherModule, "useWeather");
+});
+
+afterEach(() => {
+	vi.restoreAllMocks();
+});
 
 describe("Home View", () => {
 	it("should render loading spinner when loading is true", () => {

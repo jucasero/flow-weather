@@ -2,7 +2,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "bun:test";
 import { act, renderHook, waitFor } from "@testing-library/react";
 import * as useGeoModule from "@/hooks/useGeo";
 import { useWeather } from "@/hooks/useWeather";
-import * as weatherStoreModule from "@/store/weatherStore";
+import { useWeatherStore } from "@/store/weatherStore";
 
 // Mock dependencies
 const mockFetchWeather = vi.fn();
@@ -20,16 +20,19 @@ const mockStoreState = {
 	cityCoordinates: null,
 };
 
-// Mock useWeatherStore to behave like a selector
-const useWeatherStoreMock = vi.fn((selector) => selector(mockStoreState));
+// Mock useWeatherStore
+vi.mock("@/store/weatherStore", () => ({
+	useWeatherStore: vi.fn(),
+}));
+
+// Mock useWeatherStore implementation
+const useWeatherStoreMock = (selector: ReturnType<typeof vi.fn>) =>
+	selector(mockStoreState);
 
 beforeEach(() => {
-	// Reset mocks
 	vi.clearAllMocks();
-
-	// Setup module mocks
-	vi.spyOn(weatherStoreModule, "useWeatherStore").mockImplementation(
-		useWeatherStoreMock as unknown as typeof weatherStoreModule.useWeatherStore,
+	(useWeatherStore as unknown as ReturnType<typeof vi.fn>).mockImplementation(
+		useWeatherStoreMock,
 	);
 });
 

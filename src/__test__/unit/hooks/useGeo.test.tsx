@@ -2,6 +2,10 @@ import { afterEach, describe, expect, it, vi } from "bun:test";
 import { renderHook, waitFor } from "@testing-library/react";
 import { useGeo } from "@/hooks/useGeo";
 
+afterEach(() => {
+	vi.restoreAllMocks();
+});
+
 describe("useGeo Hook", () => {
 	const mockGeolocation = {
 		getCurrentPosition: vi.fn(),
@@ -12,10 +16,6 @@ describe("useGeo Hook", () => {
 	Object.defineProperty(global.navigator, "geolocation", {
 		value: mockGeolocation,
 		writable: true,
-	});
-
-	afterEach(() => {
-		vi.restoreAllMocks();
 	});
 
 	it("should initialize with null values", () => {
@@ -73,6 +73,25 @@ describe("useGeo Hook", () => {
 				longitude: null,
 				error: true,
 			});
+		});
+	});
+
+	it("should set error when geolocation is not supported", async () => {
+		Object.defineProperty(global.navigator, "geolocation", {
+			value: undefined,
+			writable: true,
+		});
+
+		const { result } = renderHook(() => useGeo());
+
+		await waitFor(() => {
+			expect(result.current.geolocation.error).toBe(true);
+		});
+
+		// Restore mock
+		Object.defineProperty(global.navigator, "geolocation", {
+			value: mockGeolocation,
+			writable: true,
 		});
 	});
 });

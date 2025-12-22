@@ -1,12 +1,16 @@
-import { afterEach, describe, expect, it, vi } from "bun:test";
+import { afterEach, beforeEach, describe, expect, it, vi } from "bun:test";
 import type { Weather } from "@/models";
 import { getWeather } from "@/services/weather";
 
-describe("Weather Service", () => {
-	afterEach(() => {
-		vi.restoreAllMocks();
-	});
+beforeEach(() => {
+	vi.clearAllMocks();
+});
 
+afterEach(() => {
+	vi.restoreAllMocks();
+});
+
+describe("Weather Service", () => {
 	it("should return weather data on successful fetch", async () => {
 		const mockData = {
 			latitude: 40.7128,
