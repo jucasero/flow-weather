@@ -1,72 +1,74 @@
 # 🌦 Flow Weather
 
-**Flow Weather** es una aplicación web moderna y minimalista diseñada para ofrecer pronósticos meteorológicos precisos con una interfaz fluida y elegante. Construida con **React** y alimentada por la API de **Open-Meteo**, la aplicación detecta automáticamente tu ubicación para brindarte información inmediata.
+**Flow Weather** is a modern and minimalist web application designed to offer accurate weather forecasts with a fluid and elegant interface. Built with **React** and powered by the **Open-Meteo API**, the application automatically detects your location to provide you with immediate information.
 
-## ✨ Características Principales
+## ✨ Key Features
 
--   **Geolocalización Automática**: Detecta tu ubicación actual al ingresar para mostrarte el clima local.
--   **Selección de Ciudades**: Explora el clima en ciudades preconfiguradas como Bogotá, New York, Sydney, Estocolmo y Cairo.
--   **Pronóstico Detallado de 7 Días**: Visualiza métricas completas que incluyen:
-    -   Temperaturas mínimas y máximas.
-    -   Sensación térmica media.
-    -   Probabilidad de precipitación y nubosidad.
-    -   Velocidad del viento, visibilidad y presión atmosférica.
-    -   Índice UV y horas de salida/puesta del sol.
--   **Diseño Premium**: Interfaz con tema oscuro, acentos neón y micro-animaciones para una experiencia visual superior.
--   **Responsive**: Totalmente adaptada para dispositivos móviles y escritorio.
+-   **Automatic Geolocation**: Detects your current location upon entry to show you the local weather.
+-   **City Selection**: Explore the weather in pre-configured cities like Bogotá, New York, Sydney, Stockholm, and Cairo.
+-   **Detailed 7-Day Forecast**: View comprehensive metrics including:
+    -   Minimum and maximum temperatures.
+    -   Average thermal sensation.
+    -   Precipitation probability and cloud cover.
+    -   Wind speed, visibility, and atmospheric pressure.
+    -   UV Index and sunrise/sunset times.
+-   **Premium Design**: Dark theme interface with neon accents and micro-animations for a superior visual experience.
+-   **Responsive**: Fully adapted for both mobile and desktop devices.
 
-## 🚀 Tecnologías Utilizadas
+## 🚀 Technologies Used
 
--   **Runtime**: [Bun](https://bun.sh/) - El motor de JavaScript todo en uno increíblemente rápido.
+-   **Runtime**: [Bun](https://bun.sh/) - The incredibly fast all-in-one JavaScript engine.
 -   **Framework**: React 19.
--   **Estado**: Zustand (gestión de estado global eficiente).
--   **Estilos**: CSS Modules (estilado modular y mantenible).
--   **API**: Open-Meteo (sin necesidad de API keys).
--   **Testing**: Bun Test (Unit/Integration) y Playwright (E2E).
--   **Calidad de Código**: Biome (Linter y Formatter ultra rápido).
+-   **State Management**: Zustand (efficient global state management).
+-   **Styling**: CSS Modules (modular and maintainable styling).
+-   **API**: Open-Meteo (no API keys required).
+-   **Testing**: Bun Test (Unit/Integration) and Playwright (E2E).
+-   **Code Quality**: Biome (Ultra-fast Linter and Formatter).
 
-## 🛠️ Comandos de Desarrollo
+## 🛠️ Development Commands
 
-Asegúrate de tener [Bun](https://bun.sh/) instalado en tu sistema.
+### Prerequisites
+- **Node.js**: v22.12.0 (specified in `.nvmrc`)
+- **Bun**: Make sure you have [Bun](https://bun.sh/) installed on your system.
 
-### Instalación de dependencias
+### Dependency Installation
 ```bash
 bun install
 ```
 
-### Ejecutar en modo desarrollo
-Inicia el servidor en `http://localhost:3000` con Hot Module Replacement (HMR).
+### Run in Development Mode
+Starts the server at `http://localhost:3000` with Hot Module Replacement (HMR).
 ```bash
-bun run dev
+bun dev
 ```
 
-### Construcción para producción
+### Build for Production
 ```bash
 bun run build
 ```
 
-### Iniciar servidor de producción
+### Start Production Server
 ```bash
-bun run start
+bun start
 ```
 
-### Ejecutar Tests Unitarios
+### Run Unit Tests
 ```bash
 bun test
 ```
 
-### Ejecutar Tests E2E (Playwright)
-Ejecuta las pruebas de extremo a extremo en todos los navegadores configurados.
+### Run E2E Tests (Playwright)
+Runs end-to-end tests in all configured browsers.
 ```bash
-bun run e2e
+bun e2e
 ```
 
-Para abrir la interfaz de usuario de Playwright:
+To open the Playwright UI:
 ```bash
-bun run e2e:ui
+bun e2e:ui
 ```
 
-### Verificación de código (Linter/Formatter)
+### Code Verification (Linter/Formatter)
 ```bash
-bun run check
+bun check
 ```
